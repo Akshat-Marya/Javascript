@@ -1,2 +1,1 @@
 # Javascript
-Javascript related code.
