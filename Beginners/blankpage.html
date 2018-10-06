@@ -1,0 +1,200 @@
+<!doctype html><html>
+<head>
+<title>Blank Page</title>
+</head>
+<body>
+	<h1>
+	<script type="text/javascript">
+		document.write("Hello World!")
+	</script>
+	</h1>
+	<p> Okay so <i><script type="text/javascript">
+		document.write("this")
+	</script></i>
+		word is going to be writtern by javascript
+	</p>
+	<p> Okay so <i><script type="text/javascript">
+		document.write("this")
+	</script></i>
+		word is going to be writtern by javascript
+	</p>
+	<p> Okay so <i><script type="text/javascript">
+		document.write("this")
+	</script></i>
+		word is going to be writtern by javascript
+	</p>
+	<p>
+		So this is the name of your Browser <script type="text/javascript">var BrowserName = navigator.appName;
+			document.write(BrowserName);</script>
+	</p>
+	<p>
+		And this is the height of your screen <script type="text/javascript">var ScreenHeight = window.screen.availHeight;
+			document.write(ScreenHeight);</script>
+	</p>
+	<p>
+		And this is the width of your screen <script type="text/javascript">var ScreenWidth = window.screen.availWidth;
+			document.write(ScreenWidth);</script>
+	</p>
+	<p>
+		And this is the last time file was modified <script type="text/javascript">var LastModified = document.lastModified;
+					document.write(LastModified);</script>
+	</p>
+	<p>
+		In other words <script type="text/javascript">document.write("It can be said that your browser name is "+BrowserName+" and your height is "+ScreenHeight+" and your width is "+ScreenWidth+".");</script>
+	</p>
+	<p>
+		Well we prompted you about your name, and you entered <script type="text/javascript">var UserName = prompt("Please enter your name");
+						if (UserName != null){
+							document.write(UserName);
+						}
+					</script>
+	</p>
+	<p>
+		So what we now need to do is get 5 values from user and display them all in different colors, according to what color the user chose.
+
+		So first we make the prompts and get values from the user<script type="text/javascript">var value_1 = prompt("enter your First value");
+			value_2 = prompt("enter your Second value");
+			value_3 = prompt("enter your Third value");
+		</script>
+		Then we let the user pic the color<script type="text/javascript">var TextColor = prompt("enter one of the 16 hex colors");</script>
+		Then we color the input with the same color as the user selected :
+		<div class="input_value"><script type="text/javascript">document.write(value_1);</script></div>
+		<div class="input_value"><script type="text/javascript">document.write(value_2);</script></div>
+		<div class="input_value"><script type="text/javascript">document.write(value_3);</script></div>
+		<script type="text/javascript">
+			var elem = document.querySelectorAll('.input_value');
+
+			// Set color to purple
+			elem[0].style.color = TextColor;
+			elem[1].style.color = TextColor;
+			elem[2].style.color = TextColor;
+
+			// Set the background color to a light gray
+			elem[0].style.backgroundColor = '#e5e5e5';
+			elem[1].style.backgroundColor = '#e5e5e5';
+			elem[2].style.backgroundColor = '#e5e5e5';
+
+			// Set the height to 150px
+			elem[0].style.height = '150px';
+			elem[1].style.height = '150px';
+			elem[2].style.height = '150px';
+			</script>
+	</p>
+	<p>
+		So now this is a image that changes to another image when the mouse hovers on it and then returns back to normal when the mouse hover out of it.
+		 <img title="Hello" src="camping.jpg" onmouseover="this.src='challenges.jpg'" onmouseout="this.src='camping.jpg'" style="height: 50px; width: 50px;"/>
+
+	</p>
+	<p>
+		Preload images<script type="text/javascript">
+			var camping = new Image()
+			camping.src = "camping.jpg";
+			var challenges = new Image()
+			camping.src = "challenges.jpg";
+			</script>
+	</p>
+	<p>
+		Display Preloaded Images
+		 <img title="Hello" src="camping.jpg" onmouseover="this.src='challenges.jpg'" onmouseout="this.src='camping.jpg'" style="height: 50px; width: 50px;"/>
+
+	</p>
+	<p>
+		Change Images on click
+		 <img title="Hello" src="camping.jpg" onclick="this.src='challenges.jpg'" style="height: 50px; width: 50px;"/>
+
+	</p>
+	<p>
+		So, now we make a form with some javascript in it. It will change backgorund color when the user clicks on the submit button.
+		<form>
+			<input type="text" name="last_name" placeholder="Last Name"/>
+			<input type="button" name="submit" value="submit" onclick="document.body.style.backgroundColor = 'red';"/>
+		</form>
+
+	</p>
+	<p>
+		So, now we do the same thing, but this time use a function in javascript to do it.
+		<form>
+			<input type="text" name="last_name" placeholder="Last Name"/>
+			<input type="button" name="submit" value="submit" onclick="changeColor()"/>
+			<script type="text/javascript">
+				function changeColor(){
+					document.body.style.backgroundColor = 'red';
+				}
+			</script>
+		</form>
+
+	</p>
+	<p>
+		Now we try to make a slideshow using javascript. Using a function.
+		<span id="counter"> counter </span>
+		<img title="Hello" src="camping.jpg" onclick="slideShow()" style="height: 50px; width: 50px;" id="Slide" />
+		<script type="text/javascript">
+			var count = 0;
+			function slideShow(){
+				document.getElementById('counter').innerHTML= count;
+				count = count + 1;
+				if (count == 0) {document.getElementById('Slide').src="challenges.jpg"} 
+					else if(count == 1){document.getElementById('Slide').src="education.jpg"}
+					else if(count == 2){document.getElementById('Slide').src="dalhousie.jpg"}
+					else if(count == 3){document.getElementById('Slide').src="determination.jpg"}
+				else{
+					count = 0;
+					slideShow();
+				}
+			}
+		</script>
+	</p>
+	<p>
+		Now we try to reverse our slideshow using function.
+		<span id="revcounter"> counter </span>
+		<input type="button" value="previous" name="previous_button" onclick="reverseSlideshow()">
+
+		<script type="text/javascript">
+			function reverseSlideshow(){
+				document.getElementById('revcounter').innerHTML= count;
+				count = count - 1;
+				if (count == 0) {document.getElementById('Slide').src="challenges.jpg"} 
+					else if(count == 1){document.getElementById('Slide').src="education.jpg"}
+					else if(count == 2){document.getElementById('Slide').src="dalhousie.jpg"}
+					else if(count == 3){document.getElementById('Slide').src="determination.jpg"}
+				else{
+					count = 3;
+					slideShow();
+				}
+			}
+		</script>
+	</p>
+	<p>
+		Now we will play around with setTimeout and clearTimeout methods...
+		<span id="aucounter"> Values </span>
+		<input type="button" name="startcounter" value="start" onclick="autoCounter()">
+		<input type="button" name="stopcounter" value="stop" onclick="stopCounter()">
+		<script type="text/javascript">
+			var counter = 0;
+			var counterID;
+
+			function autoCounter(){
+				++counter;
+				if (counter <= 5) {
+					document.getElementById('aucounter').innerHTML=counter;
+					counterID = setTimeout("autoCounter()",1000);
+				} 
+				else {
+					counter = 0;
+					counterID = setTimeout("autoCounter()",1000);
+				}
+			}
+
+			function stopCounter(){
+				clearTimeout(counterID);
+			}
+		</script>
+	</p>
+	<p>
+		Now we are going to open a new window and clost it using javascript
+		<script type="text/javascript">
+			
+		</script>
+	</p>
+</body>
+</html>
